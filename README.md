@@ -12,14 +12,17 @@
 
 <h3 id="introduction">Introduction</h3>
 <div>
-    Facial expressions are the cornerstone of human communication, serving as powerful indicators of emotions, intentions, and social cues. From a smile indicating happiness to a furrowed brow signaling concern, facial expressions play a fundamental role in interpersonal interactions. Understanding and interpreting these expressions are crucial not only for effective communicationbut also for various fields such as psychology, human-computer interaction, and artificial intelligence.
-    <br>
-    In today's digital age, the ability to recognize and analyze facial expressions has become increasingly important, with applications ranging from sentiment analysis in customer service to emotion detection in healthcare and entertainment. Harnessing the power of facial expression recognition technology opens up a myriad of possibilities for enhancing human-computer interaction, improving user experiences, and developing innovative solutions across diverse domains. 
-    <br>
-    Through leveraging advanced computer vision techniques and machine learning algorithms, the facial expression recognizer app aims to empower users with the ability to accurately interpret and respond to facial expressions in real-time, revolutionizing the way we interact with technology and each other.
+    Facial expressions are cornerstone of human communication, serving as powerful indicators of emotions, intentions, and social cues. From a smile indicating happiness to a furrowed brow signaling concern, facial expressions play a fundamental role in interpersonal interactions. Understanding and interpreting these expressions are crucial not only for effective communication but also for various fields such as artificial intelligence.
+    <br><br>
+    In today's digital age, the ability to recognize and analyze facial expressions has become increasingly important, with applications ranging from sentiment analysis in customer service to emotion detection in numerous sectors. Harnessing the power of facial expression recognition technology opens up a myriad of possibilities for enhancing human-computer interaction, improving user experiences, and developing innovative solutions.
 </div>
 
 <h3 id="overview">Overview</h3>
+
+<div>
+    Expressio is driven by a vision to revolutionize the field of facial expression analysis. It stands as a <b>web-based facial recognition application</b>, crafted to predict four basic human expressions – <b>anger, surprise, sadness, and happiness</b>.
+</div>
+<br>
 
 ```
                                 +-----------------------------+
@@ -73,24 +76,32 @@
 <h3 id="implementation">Implementation</h3>
 <h4>Building the Application</h4>
 
-Expressio is driven by a vision to revolutionize the field of facial expression analysis. It stands as a <b>web-based facial recognition application</b>, crafted to predict four fundamental human expressions – <b>anger, surprise, sadness, and happiness</b>.
-
 Powered by a dynamic technology stack, Expressio leverages <b>ReactJS</b> for its frontend, ensuring a sleek and intuitive user interface that captivates users from the moment they engage with the application. On the backend, <b>Flask</b> orchestrates the operations seamlessly, handling data processing and model inference with efficiency and reliability.
 
-Given the central role of image processing in Expressio's functionality, <b>Firebase</b> emerges as a cornerstone of its architecture, providing a robust blob storage solution. This enables the seamless storage and retrieval of user images, pivotal for predicting facial expressions in an accurate manner.
+Given the central role of image processing in Expressio's functionality, <b>Firebase</b> emerges as a cornerstone of its architecture, providing a robust blob storage solution. This enables the seamless storage of images.
+
+As evident from the prior drawn flowchart, once an image is uploaded and the <code>Predict</code> button is clicked, the image is sent to the backend for preprocessing and prediction. In the backend, the image undergoes several steps to ensure it meets the model's requirements.
+
+First, the face is extracted from the image using <b>Haar Cascades</b>, as our model is designed to process facial data rather than the entire person. This extraction step ensures that only the relevant portion of the image is used for prediction. 
+
+Next, I perform preprocessing using the <b>OpenCV</b> library. This preprocessing includes converting the image to grayscale and resizing it to a compatible size that the model can accept. These steps are crucial to ensure the image data aligns with the input specifications of our prediction model, facilitating accurate and efficient processing.
 
 <h4>Training the Model</h4>
 For training the model, I used the <b>FER2013</b> dataset, which is part of the famous Facial Expression Recognition (FER) Challenge. It is a CSV file that contains three columns, as demonstrated below.
+
 <br><br>
 <img src="./media/dataset.png" width="400">
 <br><br>
-The original dataset comprises a total of 7 expressions, namely: <b>Happy, Sad, Angry, Surprise, Disgust, Neutral, and Fear</b>. However, it is essential to note that the dataset is unbalanced. This imbalance necessitates attention, as indicated by the graph illustrating the non-uniform distribution of expressions.
+
+The original dataset comprises a total of 7 expressions, namely: <b>Happy, Sad, Angry, Surprise, Disgust, Neutral, and Fear</b>. However, it is essential to note that the dataset is unbalanced. This imbalance necessitates attention, as indicated by the graph illustrating the non-uniform distribution of images for each expressions.
+
 <br><br>
 <img src="./media/emotion-distribution.png" width="400">
 <br><br>
-Upon analyzing the distribution of various emotions, I made the decision to focus on four expressions: <b>Happy, Sad, Angry and Surprise</b>. This decision was influenced by several factors. Firstly, there was a notably low count of samples, such as those in the "Disgust" class. Additionally, upon manual review of the images, samples labeled as "Neutral" exhibited similarities with both "Happy" and "Sad" expressions. Similarly, samples labeled as "Fear" showed similarities with those in the "Sad" class. This observation was further confirmed by building a model on these classes and analyzing the performance.
 
-<br>
+Upon analyzing the distribution of various emotions, I made the decision to focus on four expressions: <b>Happy, Sad, Angry and Surprise</b>. This decision was influenced by several factors. Firstly, there was a notably low count of samples, such as those in the "Disgust" class. Moreover, upon manual review of the images, samples labeled as "Neutral" exhibited similarities with both "Happy" and "Sad" expressions. Similarly, samples labeled as "Fear" showed similarities with those in the "Sad" class. This observation was further confirmed by building a model on these classes.
+
+<br><br>
 
 To build the Emotion Recognition model, I constructed a <b>Deep Convolutional Neural Network (DCNN)</b> leveraging the <b>Nadam</b> optimizer. Below is the architecture of the network:
 
@@ -147,29 +158,53 @@ out_layer (Dense)            (None, 4)                 516
 =================================================================
 ```
 
-The architecture underwent training for <b>50</b> epochs with a batch size of <b>32</b>. Remarkably, it attained an accuracy of <b>85.50%</b> on the training set and <b>83.90%</b> on the validation set. To ensure robust model development, I employed callbacks such as "EarlyStopping" and "ReduceLROnPlateau".
+The architecture underwent training for <b>50</b> epochs with a batch size of <b>32</b>. Remarkably, it attained an accuracy of <b>85.50%</b> on the training set and <b>83.90%</b> on the validation set. To ensure robust model development, I employed essential callbacks like "EarlyStopping" and "ReduceLROnPlateau" to prevent overfitting.
 
-Below, the results of the trained model are showcased:
+Below, I showcase the results extracted upon training the model.
 
 <img src="./media/training-loss.png">
 <br><br>
 <img src="./media/dataset-results.png">
 
-<h3 id="installation-and-setup">Installation and Setup</h3>
+<!-- <h3 id="installation-and-setup">Installation and Setup</h3> -->
+
+
 <h3 id="usage">Usage</h3>
-Upon accessing Expressio, users are greeted with an interface that guides them through the application's capabilities. The landing page comprises two distinct sections:
+Please refer to the following link for accessing the application: <a href=""></a>
+<br><br>
+The landing page comprises of two distinct sections:
 
+<br><br>
 <img src="./media/home-page.png">
+<br><br>
 
-1. **Image Input:** Positioned on the left, this section offers users the flexibility to either upload an image from their device or utilize their webcam to capture a snapshot in real-time. This seamless integration of image input methods ensures accessibility and convenience for users of all preferences. As demonstrated above, the application offers the following buttons to the user
-   1. **UPLOAD** : Opens a file explorer to upload an image from the local system. 
-   2. **WEBCAM** : opens device webcam and capture a snapshot.
-   3. **PREDICT** : predict the facial expression when the image is uploaded. 
-
-2. **Prediction Result:** On the right, a blank canvas eagerly awaits the user's input. Once an image is uploaded or captured, it is swiftly transmitted to the backend for prediction. The canvas then dynamically showcases the predicted expressions using an interactive pie chart. This visualization not only enhances user engagement but also provides insightful feedback by showing confidence levels associated with each predicted expression.
+<ul>
+    <li>
+        On the left, there is a section that allows you to either upload an image from your device or leverage the system's webcam to capture a snapshot in real-time. As illustrated above, you can see the following buttons:
+        <ul>
+            <li>
+                <strong>UPLOAD</strong>: Opens the file explorer to select and upload an image from your local system.
+            </li>
+            <li>
+                <strong>WEBCAM</strong>: Access device webcam to capture a snapshot.
+            </li>
+            <li>
+                <strong>PREDICT</strong>: Use it to predict the facial expression after image is loaded.
+            </li>
+        </ul>
+    </li>
+    <br>
+    <li>
+        On the right, a blank canvas eagerly awaits the user's input. Once an image is uploaded or captured, it is swiftly transmitted to the backend for prediction. The canvas then dynamically showcases the predicted expressions using an interactive pie chart. This visualization not only enhances user engagement but also provides insightful feedback by showing confidence levels associated with each predicted expression.
+    </li>
+</ul>
 
 
 <h3 id="results-and-performance">Results and Performance</h3>
+<div>
+    Upon integrating the model with the backend, I obtained the following predictions by uploading images of faces corresponding to various expressions. These results demonstrate the robustness of the trained model and highlight how competent the application is in recognizing facial expressions with high precision.
+</div>
+<br>
 <table>
     <tr>
         <td>
@@ -212,5 +247,5 @@ Upon accessing Expressio, users are greeted with an interface that guides them t
 </div>
 <hr>
 <div>
-    Thank you for visiting! If you find value in this project, please consider giving it a ⭐ star. Your support is greatly appreciated and assists others discover the project. If you have any requests for enhancements or find any bugs, please report them under <a href="https://github.com/asood-life/expressio/issues">Issues</a>. Your feedback is invaluable in making this project better for everyone.
+    Thank you for taking the time to go through this project! If you find it valuable, please consider giving it a ⭐ star. Your support is appreciated and helps others in discovering the project. Should you have any enhancement requests or encounter a bug, please report it in the <a href="https://github.com/asood-life/expressio/issues">Issues</a> section. Your feedback is crucial in improving this project for all.
 </div>

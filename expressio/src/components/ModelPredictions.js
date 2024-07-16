@@ -30,7 +30,7 @@ function ModelPredictions({ predicted, predictionArr }) {
             labels: ['ANGRY', 'HAPPY', 'SAD', 'SURPRISE'],
             values: predictionArr[0]
         };
-        console.log(predictionArr)
+        console.log(predictionArr);
     }
 
     return (
