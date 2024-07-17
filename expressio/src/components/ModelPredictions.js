@@ -36,7 +36,7 @@ function ModelPredictions({ predicted, predictionArr }) {
     return (
         <div style={{ height: '100%' }} className="flex flex-wrap justify-center">
             <Box style={{ height: '100%' }} className="flex flex-col justify-center align-middle w-4/6">
-                <Paper elevation={0} square className='mb-5 text-center'>
+                <Paper elevation={0} className='mb-5 text-center'>
                     {predicted
                         // render predicted expression only if prediction has been made
                         ? (<div className='py-2'>Predicted Expression is

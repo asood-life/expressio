@@ -80,7 +80,7 @@ Powered by a dynamic technology stack, Expressio leverages <b>ReactJS</b> for it
 
 Given the central role of image processing in Expressio's functionality, <b>Firebase</b> emerges as a cornerstone of its architecture, providing a robust blob storage solution. This enables the seamless storage of images.
 
-As evident from the prior drawn flowchart, once an image is uploaded and the <code>Predict</code> button is clicked, the image is sent to the backend for preprocessing and prediction. In the backend, the image undergoes several steps to ensure it meets the model's requirements.
+As evident from the prior drawn flowchart, once an image is uploaded and the <code>Predict</code> button is clicked, the image is sent to the backend for preprocessing and prediction. In the backend, the image undergoes several steps.
 
 First, the face is extracted from the image using <b>Haar Cascades</b>, as our model is designed to process facial data rather than the entire person. This extraction step ensures that only the relevant portion of the image is used for prediction. 
 
@@ -100,8 +100,6 @@ The original dataset comprises a total of 7 expressions, namely: <b>Happy, Sad, 
 <br><br>
 
 Upon analyzing the distribution of various emotions, I made the decision to focus on four expressions: <b>Happy, Sad, Angry and Surprise</b>. This decision was influenced by several factors. Firstly, there was a notably low count of samples, such as those in the "Disgust" class. Moreover, upon manual review of the images, samples labeled as "Neutral" exhibited similarities with both "Happy" and "Sad" expressions. Similarly, samples labeled as "Fear" showed similarities with those in the "Sad" class. This observation was further confirmed by building a model on these classes.
-
-<br><br>
 
 To build the Emotion Recognition model, I constructed a <b>Deep Convolutional Neural Network (DCNN)</b> leveraging the <b>Nadam</b> optimizer. Below is the architecture of the network:
 
@@ -170,7 +168,7 @@ Below, I showcase the results extracted upon training the model.
 
 
 <h3 id="usage">Usage</h3>
-Please refer to the following link for accessing the application: <a href=""></a>
+Please refer to the following link for accessing the application: <a href="https://expressio-fer.onrender.com">https://expressio-fer.onrender.com</a>
 <br><br>
 The landing page comprises of two distinct sections:
 
@@ -180,7 +178,7 @@ The landing page comprises of two distinct sections:
 
 <ul>
     <li>
-        On the left, there is a section that allows you to either upload an image from your device or leverage the system's webcam to capture a snapshot in real-time. As illustrated above, you can see the following buttons:
+        The section on the left allows you to either upload an image from your device or leverage the system's webcam to capture a snapshot in real-time. As illustrated above, you can see the following buttons:
         <ul>
             <li>
                 <strong>UPLOAD</strong>: Opens the file explorer to select and upload an image from your local system.
