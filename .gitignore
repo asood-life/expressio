@@ -4,8 +4,5 @@ backend/serviceAccountKey.json
 #  virtual environment
 backend/expressio-fer
 
-#saved model
-backend/expressio.keras
-
 # Visual Studio Code workspace settings
 .vscode
