@@ -1,4 +1,3 @@
-// Importing necessary components and libraries
 import React, { useState, useRef, useEffect } from 'react';
 import { Box, Grid, Paper, Button } from '@mui/material';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
@@ -113,7 +112,7 @@ function UserInput({ setPredicted, setPredictionArr }) {
         const formData = new FormData();
         formData.append('image', blob, 'image.jpeg');
 
-        fetch('https://expressio-fer.onrender.com/upload', {
+        fetch('http://localhost:5000/upload', {
             method: 'POST',
             body: formData
         }).then(response => {
@@ -124,7 +123,7 @@ function UserInput({ setPredicted, setPredictionArr }) {
         }).then(data => {
             console.log('Image Uploaded:', data);
 
-            return axios.get('https://expressio-fer.onrender.com/predict');
+            return axios.get('http://localhost:5000/predict');
         }).then(response => {
             setPredictionArr(response.data.predictionArr);
             setPredicted(response.data.prediction);
@@ -136,14 +135,14 @@ function UserInput({ setPredicted, setPredictionArr }) {
 
     return (
         <div style={{ height: '100%' }} className="flex justify-around align-middle">
-            <Box style={{ height: '100%' }} className="flex flex-col justify-center align-middle w-4/5 bg-transparent">
+            <Box style={{ height: '100%' }} className="flex flex-col justify-center align-middle w-4/5">
                 <Paper square elevation={0} className='py-2'>
                     <div className='text-center'>
-                        <h1 className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold bg-gradient-to-r from-purple-800 to-pink-600 text-transparent bg-clip-text tracking-widest'>EXPRESSIO</h1>
+                        <h1 className='font-bold text-2xl bg-gradient-to-r from-purple-800 to-pink-600 text-transparent bg-clip-text tracking-widest'>EXPRESSIO</h1>
                     </div>
                 </Paper>
                 <Paper square className='flex justify-center align-middle py-2' elevation={0}>
-                    <div className='flex w-5/6 shadow-lg h-full' id='image'>
+                    <div className='flex w-full md:w-5/6 shadow-lg h-full overflow-hidden' id='image'>
                         {image ? (
                             <img src={image} alt="Uploaded" width={imageDimensions.width} height={imageDimensions.height} />
                         ) : (
@@ -151,27 +150,27 @@ function UserInput({ setPredicted, setPredictionArr }) {
                         )}
                     </div>
                 </Paper>
-                <Paper square elevation={0} className='flex justify-center'>
-                    <Grid className='flex flex-col justify-center'>
-                        <Grid item className='px-2 py-4'>
-                            <Button component="label" role={undefined} variant="outlined" startIcon={<BackupOutlinedIcon />}>
+                <Paper square elevation={0} className=' justify-center py-2'>
+                    <Grid container spacing={2}>
+                        <Grid item xs={6} sm={4} className='px-1 py-2'>
+                            <Button component="label" role={undefined} variant="outlined" fullWidth startIcon={<BackupOutlinedIcon />}>
                                 Upload
                                 <VisuallyHiddenInput type="file" onChange={handleImageUpload} />
                             </Button>
                         </Grid>
-                        <Grid item className='px-2 py-4'>
+                        <Grid item xs={6} sm={4} className='px-1 py-2'>
                             {!isWebcamActive ? (
-                                <Button onClick={handleOpenCamera} color='error' variant="outlined" startIcon={<VideocamOutlinedIcon />} sx={{ backgroundColor: 'white' }}>
+                                <Button onClick={handleOpenCamera} color='error' variant="outlined" fullWidth startIcon={<VideocamOutlinedIcon />} sx={{ backgroundColor: 'white' }}>
                                     WebCam
                                 </Button>
                             ) : (
-                                <Button onClick={handleCapture} color='error' variant="outlined" startIcon={<BackupOutlinedIcon />}>
+                                <Button onClick={handleCapture} color='error' variant="outlined" fullWidth startIcon={<BackupOutlinedIcon />}>
                                     Capture
                                 </Button>
                             )}
                         </Grid>
-                        <Grid item className='px-2 py-4'>
-                            <Button variant="outlined" color='secondary' onClick={predictExpression} endIcon={<ArrowCircleRightOutlinedIcon />}>
+                        <Grid item xs={12} sm={4} className='px-1 py-2'>
+                            <Button variant="outlined" color='secondary' fullWidth onClick={predictExpression} endIcon={<ArrowCircleRightOutlinedIcon />}>
                                 Predict
                             </Button>
                         </Grid>

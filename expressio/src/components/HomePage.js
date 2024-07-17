@@ -13,17 +13,18 @@ function HomePage() {
     // Render function
     return (
         <div style={{ height: '100vh', backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover' }}>
-            <Grid style={{ height: '100%' }} container spacing={1}>
+            < Grid style={{ height: '100%' }
+            } container spacing={1} >
                 {/* UserInput component */}
-                <Grid item xs={12} md={6}>
+                < Grid item xs={12} md={6} >
                     <UserInput setPredicted={setPredicted} setPredictionArr={setPredictionArr} />
-                </Grid>
+                </Grid >
                 {/* ModelPredictions component */}
-                <Grid item xs={12} md={6}>
+                < Grid item xs={12} md={6} >
                     <ModelPredictions predicted={predicted} predictionArr={predictionArr} />
-                </Grid>
-            </Grid>
-        </div>
+                </Grid >
+            </Grid >
+        </div >
     );
 }
 

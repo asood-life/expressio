@@ -12,7 +12,7 @@
 
 <h3 id="introduction">Introduction</h3>
 <div>
-    Facial expressions are cornerstone of human communication, serving as powerful indicators of emotions, intentions, and social cues. From a smile indicating happiness to a furrowed brow signaling concern, facial expressions play a fundamental role in interpersonal interactions. Understanding and interpreting these expressions are crucial not only for effective communication but also for various fields such as artificial intelligence.
+    Facial expressions are cornerstone of human communication, serving as powerful indicators of emotions, intentions and social cues. From a smile indicating happiness to a furrowed brow signaling concern, facial expressions play a fundamental role in interpersonal interactions. Understanding and interpreting these expressions are crucial not only for effective communication but also for various fields such as artificial intelligence.
     <br><br>
     In today's digital age, the ability to recognize and analyze facial expressions has become increasingly important, with applications ranging from sentiment analysis in customer service to emotion detection in numerous sectors. Harnessing the power of facial expression recognition technology opens up a myriad of possibilities for enhancing human-computer interaction, improving user experiences, and developing innovative solutions.
 </div>
@@ -20,7 +20,7 @@
 <h3 id="overview">Overview</h3>
 
 <div>
-    Expressio is driven by a vision to revolutionize the field of facial expression analysis. It stands as a <b>web-based facial recognition application</b>, crafted to predict four basic human expressions – <b>anger, surprise, sadness, and happiness</b>.
+    Expressio is driven by a vision to revolutionize the field of facial expression analysis. It stands as a <b>web-based facial recognition application</b>, crafted to predict four basic human expressions – <b>anger, surprise, sadness and happiness</b>.
 </div>
 <br>
 
@@ -84,10 +84,10 @@ As evident from the prior drawn flowchart, once an image is uploaded and the <co
 
 First, the face is extracted from the image using <b>Haar Cascades</b>, as our model is designed to process facial data rather than the entire person. This extraction step ensures that only the relevant portion of the image is used for prediction. 
 
-Next, I perform preprocessing using the <b>OpenCV</b> library. This preprocessing includes converting the image to grayscale and resizing it to a compatible size that the model can accept. These steps are crucial to ensure the image data aligns with the input specifications of our prediction model, facilitating accurate and efficient processing.
+Next, I perform preprocessing using the <b>OpenCV</b> library. This preprocessing includes converting the image to grayscale and resizing it to a compatible size that the model can accept. These steps are crucial to ensure the image data aligns with the input specifications of the prediction model, facilitating accurate processing.
 
 <h4>Training the Model</h4>
-For training the model, I used the <b>FER2013</b> dataset, which is part of the famous Facial Expression Recognition (FER) Challenge. It is a CSV file that contains three columns, as demonstrated below.
+For training the model, I used the <b>FER2013</b> dataset, which is part of the famous Facial Expression Recognition (FER) Challenge. It is a CSV file that comprises of three columns, as demonstrated below.
 
 <br><br>
 <img src="./media/dataset.png" width="400">
@@ -161,7 +161,7 @@ The architecture underwent training for <b>50</b> epochs with a batch size of <b
 Below, I showcase the results extracted upon training the model.
 
 <img src="./media/training-loss.png">
-<br><br>
+<br>
 <img src="./media/dataset-results.png">
 
 <!-- <h3 id="installation-and-setup">Installation and Setup</h3> -->
@@ -178,7 +178,8 @@ The landing page comprises of two distinct sections:
 
 <ul>
     <li>
-        The section on the left allows you to either upload an image from your device or leverage the system's webcam to capture a snapshot in real-time. As illustrated above, you can see the following buttons:
+        The section on the left allows you to either upload an image from your device or leverage the system's webcam to capture a snapshot in real-time. The buttons in the section are detailed as follows:
+        <br><br>
         <ul>
             <li>
                 <strong>UPLOAD</strong>: Opens the file explorer to select and upload an image from your local system.
@@ -228,7 +229,7 @@ The landing page comprises of two distinct sections:
 
 <h3 id="future-work">Future Work</h3>
 <ul>
-    <li><b>Augmenting the Uploaded Image</b>: Implement a feature in the application where, upon clicking the predict function, the user is presented with an option to apply transformations to the image, such as adjusting contrast, brightness, rotation, and cropping, before submitting it for prediction.</li>
+    <li><b>Augmenting the Uploaded Image</b>: Implement a feature in the application where, upon clicking the predict function, the user is presented with an option to apply transformations to the image, such as adjusting contrast brightness, rotation, and cropping, before submitting it for prediction.</li>
     <li><b>Elevating Model Robustness</b>: Enhance the model architecture and apply augmentations to the existing dataset to build a more robust model capable of predicitng facial expression with better precision.</li>
 </ul>
 
