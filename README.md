@@ -3,7 +3,7 @@
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#implementation">Implementation</a></li>
-    <li><a href="#installation-and-setup">Installation and Setup</a></li>
+    <!-- <li><a href="#installation-and-setup">Installation and Setup</a></li> -->
     <li><a href="#usage">Usage</a></li>
     <li><a href="#results-and-performance">Results and Performance</a></li>
     <li><a href="#future-work">Future Work</a></li>
@@ -99,7 +99,7 @@ The original dataset comprises a total of 7 expressions, namely: <b>Happy, Sad, 
 <img src="./media/emotion-distribution.png" width="400">
 <br><br>
 
-Upon analyzing the distribution of various emotions, I made the decision to focus on four expressions: <b>Happy, Sad, Angry and Surprise</b>. This decision was influenced by several factors. Firstly, there was a notably low count of samples, such as those in the "Disgust" class. Moreover, upon manual review of the images, samples labeled as "Neutral" exhibited similarities with both "Happy" and "Sad" expressions. Similarly, samples labeled as "Fear" showed similarities with those in the "Sad" class. This observation was further confirmed by building a model on these classes.
+Upon analyzing the distribution of various emotions, I made the decision to focus on four expressions: <b>Happy, Sad Angry and Surprise</b>. This decision was influenced by several factors. Firstly, there was a notably low count of samples such as those in the "Disgust" class. Moreover, upon manual review of the images, samples labeled as "Neutral" exhibited similarities with both "Happy" and "Sad" expressions. Similarly, samples labeled as "Fear" showed similarities with those in the "Sad" class. This observation was further confirmed by building a model on these classes.
 
 To build the Emotion Recognition model, I constructed a <b>Deep Convolutional Neural Network (DCNN)</b> leveraging the <b>Nadam</b> optimizer. Below is the architecture of the network:
 
