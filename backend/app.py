@@ -20,6 +20,10 @@ sys.stderr.reconfigure(encoding='utf-8')
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def welcome():
+    return 'Expressio - Facial Recognzier App'
+
 # Load the model using the constructed absolute path
 model = load_model('backend/expressio.keras')
 
