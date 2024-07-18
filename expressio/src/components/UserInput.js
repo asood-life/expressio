@@ -150,27 +150,27 @@ function UserInput({ setPredicted, setPredictionArr }) {
                         )}
                     </div>
                 </Paper>
-                <Paper square elevation={0} className=' justify-center py-2'>
-                    <Grid container spacing={2}>
-                        <Grid item xs={6} sm={4} className='px-1 py-2'>
-                            <Button component="label" role={undefined} variant="outlined" fullWidth startIcon={<BackupOutlinedIcon />}>
+                <Paper square elevation={0} className='flex justify-center items-center py-2'>
+                    <Grid container spacing={-5} justifyContent="center" alignItems="center" style={{ height: '100%' }}>
+                        <Grid item xs={6} sm={4} className='px-1 py-2 flex justify-center'>
+                            <Button component="label" role={undefined} variant="outlined" startIcon={<BackupOutlinedIcon />}>
                                 Upload
                                 <VisuallyHiddenInput type="file" onChange={handleImageUpload} />
                             </Button>
                         </Grid>
-                        <Grid item xs={6} sm={4} className='px-1 py-2'>
+                        <Grid item xs={6} sm={4} className='px-1 py-2 flex justify-center'>
                             {!isWebcamActive ? (
-                                <Button onClick={handleOpenCamera} color='error' variant="outlined" fullWidth startIcon={<VideocamOutlinedIcon />} sx={{ backgroundColor: 'white' }}>
+                                <Button onClick={handleOpenCamera} color='error' variant="outlined" startIcon={<VideocamOutlinedIcon />} sx={{ backgroundColor: 'white' }}>
                                     WebCam
                                 </Button>
                             ) : (
-                                <Button onClick={handleCapture} color='error' variant="outlined" fullWidth startIcon={<BackupOutlinedIcon />}>
+                                <Button onClick={handleCapture} color='error' variant="outlined" startIcon={<BackupOutlinedIcon />}>
                                     Capture
                                 </Button>
                             )}
                         </Grid>
-                        <Grid item xs={12} sm={4} className='px-1 py-2'>
-                            <Button variant="outlined" color='secondary' fullWidth onClick={predictExpression} endIcon={<ArrowCircleRightOutlinedIcon />}>
+                        <Grid item xs={6} sm={4} className='px-1 py-2 flex justify-center'>
+                            <Button variant="outlined" color='secondary' onClick={predictExpression} endIcon={<ArrowCircleRightOutlinedIcon />}>
                                 Predict
                             </Button>
                         </Grid>
