@@ -5,4 +5,4 @@ flask
 flask_cors
 pillow
 numpy==1.26.4
-gunicorn
+waitress
