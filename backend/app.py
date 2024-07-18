@@ -24,7 +24,7 @@ CORS(app)
 model = load_model('backend/expressio.keras')
 
 # Initialize Firebase Admin SDK with service account key
-cred = credentials.Certificate('backend/serviceAccountKey.json')
+cred = credentials.Certificate('serviceAccountKey.json')
 firebase_admin.initialize_app(cred, {
     'storageBucket': 'expressio-fer.appspot.com'
 })
