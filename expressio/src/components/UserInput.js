@@ -112,7 +112,7 @@ function UserInput({ setPredicted, setPredictionArr }) {
         const formData = new FormData();
         formData.append('image', blob, 'image.jpeg');
 
-        fetch('http://localhost:5000/upload', {
+        fetch('https://expressio-backend.onrender.com/upload', {
             method: 'POST',
             body: formData
         }).then(response => {
@@ -123,7 +123,7 @@ function UserInput({ setPredicted, setPredictionArr }) {
         }).then(data => {
             console.log('Image Uploaded:', data);
 
-            return axios.get('http://localhost:5000/predict');
+            return axios.get('https://expressio-backend.onrender.com/predict');
         }).then(response => {
             setPredictionArr(response.data.predictionArr);
             setPredicted(response.data.prediction);
