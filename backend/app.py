@@ -20,11 +20,15 @@ sys.stderr.reconfigure(encoding='utf-8')
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def welcome():
+    return 'Expressio - Facial Recognzier App'
+
 # Load the model using the constructed absolute path
 model = load_model('backend/expressio.keras')
 
 # Initialize Firebase Admin SDK with service account key
-cred = credentials.Certificate('backend/serviceAccountKey.json')
+cred = credentials.Certificate('serviceAccountKey.json')
 firebase_admin.initialize_app(cred, {
     'storageBucket': 'expressio-fer.appspot.com'
 })
