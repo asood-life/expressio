@@ -3,6 +3,8 @@ backend/serviceAccountKey.json
 
 #  virtual environment
 backend/expressio-fer
+
+# python cache folder
 __pycache__
 
 # Visual Studio Code workspace settings

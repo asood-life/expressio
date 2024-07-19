@@ -21,8 +21,8 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
-def welcome():
-    return 'Expressio - Facial Recognzier App'
+def welcome_message():
+    return 'Expressio - Facial Recognzier Application'
 
 # Load the model using the constructed absolute path
 model = load_model('backend/expressio.keras')
