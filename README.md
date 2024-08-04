@@ -83,7 +83,7 @@ As evident from the prior drawn flowchart, once an image is uploaded and the <co
 
 First, the face is extracted from the image using <b>Haar Cascades</b>, as our model is designed to process facial data rather than the entire person. This ensures that only the relevant portion of the image is used for prediction. 
 
-Next, I perform preprocessing using the <b>OpenCV</b> library. This preprocessing includes converting the image to grayscale and resizing it to a compatible size that the model can accept. These steps are crucial to ensure the image data aligns with the input specifications of the model, facilitating accurate processing.
+Next, I perform preprocessing using the <b>OpenCV</b> library. This preprocessing includes converting the image to grayscale and resizing it to a compatible size that the model can accept. These steps are crucial to ensure the image data aligns with the input specifications of the model and facilitate accurate processing.
 
 <h4>Training the Model</h4>
 For training the model, I used the <b>FER2013</b> dataset, which is part of the famous Facial Expression Recognition (FER) Challenge. It is a CSV file that comprises of three columns, as demonstrated below.
@@ -100,7 +100,7 @@ The original dataset comprises a total of 7 expressions, namely: <b>Happy, Sad, 
 
 Upon analyzing the distribution of various emotions, I made the decision to focus on four expressions: <b>Happy, Sad Angry and Surprise</b>. This decision was influenced by several factors. Firstly, there was a notably low count of samples such as those in the "Disgust" class. Moreover, upon a manual review of the images, samples labeled as "Neutral" exhibited similarities with both "Happy" and "Sad" expressions. Similarly, samples labeled as "Fear" showed similarities with those in the "Sad" class. This observation was further confirmed by training the model.
 
-To build the Emotion Recognition model, I constructed a <b>Deep Convolutional Neural Network (DCNN)</b> leveraging the <b>Nadam</b> optimizer. Below is the architecture of the network:
+To build the Emotion Recognition model, I constructed a <b>Deep Convolutional Neural Network (DCNN)</b> as shown:
 
 ```
 Model: "DCNN"
@@ -177,7 +177,7 @@ The landing page comprises of two distinct sections:
 
 <ul>
     <li>
-        The section on the left allows you to either upload an image from your device or leverage the system's webcam to capture a snapshot in real-time. The buttons in the section are detailed as follows:
+        The section on the left allows you to either upload an image from your device or leverage the system webcam to capture a snapshot in real-time. The buttons in the section are detailed as follows:
         <br><br>
         <ul>
             <li>
