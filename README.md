@@ -12,7 +12,7 @@
 
 <h3 id="introduction">Introduction</h3>
 <div>
-    Facial expressions are cornerstone of human communication, serving as powerful indicators of emotions and social cues. From a smile indicating happiness to a furrowed brow signaling concern, facial expressions play a fundamental role in interpersonal interactions. Understanding and interpreting these expressions are crucial not only for effective communication but also for various fields such as artificial intelligence.
+    Facial expressions are cornerstone of the human communication, serving as powerful indicators of emotions and social cues. From a smile indicating happiness to a furrowed brow signaling concern, facial expressions play a fundamental role in interpersonal interactions. Understanding and interpreting these expressions are crucial not only for effective communication but also for various fields such as artificial intelligence.
     <br><br>
     In present digital landscape, the ability to recognize and analyze facial expressions has become increasingly important, with applications ranging from sentiment analysis in customer service to emotion detection in numerous sectors. Harnessing the power of facial expression recognition technology opens up a myriad of possibilities for enhancing human-computer interaction, improving user experiences, and developing innovative solutions.
 </div>
@@ -75,7 +75,7 @@
 
 <h3 id="implementation">Implementation</h3>
 
-Expressio leverages <b>ReactJS</b> for its frontend, ensuring a sleek and intuitive user interface that captivates users from the moment they engage with the application. On the backend, <b>Flask</b> orchestrates the operations seamlessly, handling data processing and model inference with efficiency and reliability.
+Expressio leverages <b>ReactJS</b> for its frontend, ensuring a sleek and intuitive user interface that captivates users from the moment they engage with the application. On the backend side, <b>Flask</b> orchestrates the operations.
 
 Given the central role of image processing in Expressio's functionality, <b>Firebase</b> emerges as a cornerstone of its architecture, providing a robust blob storage solution. This enables the seamless storage of images.
 
@@ -83,7 +83,7 @@ As evident from the prior drawn flowchart, once an image is uploaded and the <co
 
 First, the face is extracted from the image using <b>Haar Cascades</b>, as our model is designed to process facial data rather than the entire person. This ensures that only the relevant portion of the image is used for prediction. 
 
-Next, I perform preprocessing using the <b>OpenCV</b> library. This preprocessing includes converting the image to grayscale and resizing it to a compatible size that the model can accept. These steps are crucial to ensure the image data aligns with the input specifications of the prediction model, facilitating accurate processing.
+Next, I perform preprocessing using the <b>OpenCV</b> library. This preprocessing includes converting the image to grayscale and resizing it to a compatible size that the model can accept. These steps are crucial to ensure the image data aligns with the input specifications of the model, facilitating accurate processing.
 
 <h4>Training the Model</h4>
 For training the model, I used the <b>FER2013</b> dataset, which is part of the famous Facial Expression Recognition (FER) Challenge. It is a CSV file that comprises of three columns, as demonstrated below.
@@ -98,7 +98,7 @@ The original dataset comprises a total of 7 expressions, namely: <b>Happy, Sad, 
 <img src="./media/emotion-distribution.png" width="400">
 <br><br>
 
-Upon analyzing the distribution of various emotions, I made the decision to focus on four expressions: <b>Happy, Sad Angry and Surprise</b>. This decision was influenced by several factors. Firstly, there was a notably low count of samples such as those in the "Disgust" class. Moreover, upon manual review of the images, samples labeled as "Neutral" exhibited similarities with both "Happy" and "Sad" expressions. Similarly, samples labeled as "Fear" showed similarities with those in the "Sad" class. This observation was further confirmed by building a model.
+Upon analyzing the distribution of various emotions, I made the decision to focus on four expressions: <b>Happy, Sad Angry and Surprise</b>. This decision was influenced by several factors. Firstly, there was a notably low count of samples such as those in the "Disgust" class. Moreover, upon manual review of the images, samples labeled as "Neutral" exhibited similarities with both "Happy" and "Sad" expressions. Similarly, samples labeled as "Fear" showed similarities with those in the "Sad" class. This observation was further confirmed by training the model.
 
 To build the Emotion Recognition model, I constructed a <b>Deep Convolutional Neural Network (DCNN)</b> leveraging the <b>Nadam</b> optimizer. Below is the architecture of the network:
 
@@ -193,7 +193,7 @@ The landing page comprises of two distinct sections:
     </li>
     <br>
     <li>
-        On the right, a blank canvas eagerly awaits the user's input. Once an image is uploaded or captured, it is swiftly transmitted to the backend for prediction. The canvas then dynamically showcases the predicted expressions using an interactive pie chart. This visualization not only enhances user engagement but also provides insightful feedback by showing confidence levels associated with each predicted expression.
+        On the right side, a blank canvas eagerly awaits the user's input. Once an image is uploaded or captured, it is swiftly transmitted to the backend for prediction. The canvas then dynamically showcases the predicted expressions using an interactive pie chart. This visualization not only enhances user engagement but also provides insightful feedback by showing confidence levels associated with each predicted expression.
     </li>
 </ul>
 
@@ -228,7 +228,7 @@ The landing page comprises of two distinct sections:
 
 <h3 id="future-work">Future Work</h3>
 <ul>
-    <li><b>Augmenting the Uploaded Image</b>: Implement a feature in the application where, upon clicking the predict function, the user is presented with an option to apply transformations to the image, such as adjusting contrast brightness, rotation, and cropping, before submitting it for prediction.</li>
+    <li><b>Augmenting the Uploaded Image</b>: Implement a feature in the application where, upon clicking the predict function, the user is presented with an option to apply transformations to the image, such as adjusting contrast brightness, rotation, and cropping, before submitting it for prediction to backend.</li>
     <li><b>Elevating Model Robustness</b>: Enhance the model architecture and apply augmentations to the existing dataset to build a more robust model capable of predicitng facial expression with better precision.</li>
 </ul>
 
