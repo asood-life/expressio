@@ -20,7 +20,7 @@
 <h3 id="overview">Overview</h3>
 
 <div>
-    Expressio is introduced with a vision to revolutionize the field of facial expression analysis. It stands as a <b>web-based application</b> crafted to predict four basic human expressions – <b>anger, surprise, sadness and happiness</b>.
+    Expressio is introduced with a vision to revolutionize the field of facial expression analysis. It stands as a <b>web-based application</b> built to predict four basic human expressions – <b>anger, surprise, sadness and happiness</b>.
 </div>
 <br>
 
@@ -74,15 +74,14 @@
 ```
 
 <h3 id="implementation">Implementation</h3>
-<h4>Building the Application</h4>
 
-Powered by a dynamic technology stack, Expressio leverages <b>ReactJS</b> for its frontend, ensuring a sleek and intuitive user interface that captivates users from the moment they engage with the application. On the backend, <b>Flask</b> orchestrates the operations seamlessly, handling data processing and model inference with efficiency and reliability.
+Expressio leverages <b>ReactJS</b> for its frontend, ensuring a sleek and intuitive user interface that captivates users from the moment they engage with the application. On the backend, <b>Flask</b> orchestrates the operations seamlessly, handling data processing and model inference with efficiency and reliability.
 
 Given the central role of image processing in Expressio's functionality, <b>Firebase</b> emerges as a cornerstone of its architecture, providing a robust blob storage solution. This enables the seamless storage of images.
 
 As evident from the prior drawn flowchart, once an image is uploaded and the <code>Predict</code> button is clicked, the image is sent to the backend for preprocessing and prediction. In the backend, the image undergoes several steps.
 
-First, the face is extracted from the image using <b>Haar Cascades</b>, as our model is designed to process facial data rather than the entire person. This extraction step ensures that only the relevant portion of the image is used for prediction. 
+First, the face is extracted from the image using <b>Haar Cascades</b>, as our model is designed to process facial data rather than the entire person. This ensures that only the relevant portion of the image is used for prediction. 
 
 Next, I perform preprocessing using the <b>OpenCV</b> library. This preprocessing includes converting the image to grayscale and resizing it to a compatible size that the model can accept. These steps are crucial to ensure the image data aligns with the input specifications of the prediction model, facilitating accurate processing.
 
@@ -99,7 +98,7 @@ The original dataset comprises a total of 7 expressions, namely: <b>Happy, Sad, 
 <img src="./media/emotion-distribution.png" width="400">
 <br><br>
 
-Upon analyzing the distribution of various emotions, I made the decision to focus on four expressions: <b>Happy, Sad Angry and Surprise</b>. This decision was influenced by several factors. Firstly, there was a notably low count of samples such as those in the "Disgust" class. Moreover, upon manual review of the images, samples labeled as "Neutral" exhibited similarities with both "Happy" and "Sad" expressions. Similarly, samples labeled as "Fear" showed similarities with those in the "Sad" class. This observation was further confirmed by building a model on these classes.
+Upon analyzing the distribution of various emotions, I made the decision to focus on four expressions: <b>Happy, Sad Angry and Surprise</b>. This decision was influenced by several factors. Firstly, there was a notably low count of samples such as those in the "Disgust" class. Moreover, upon manual review of the images, samples labeled as "Neutral" exhibited similarities with both "Happy" and "Sad" expressions. Similarly, samples labeled as "Fear" showed similarities with those in the "Sad" class. This observation was further confirmed by building a model.
 
 To build the Emotion Recognition model, I constructed a <b>Deep Convolutional Neural Network (DCNN)</b> leveraging the <b>Nadam</b> optimizer. Below is the architecture of the network:
 
@@ -246,5 +245,5 @@ The landing page comprises of two distinct sections:
 </div>
 <hr>
 <div>
-    Thank you for taking the time to go through this project! If you find it valuable, please consider giving it a ⭐ star. Your support is appreciated and helps others in discovering the project. Should you have any enhancement requests or encounter a bug, please report it in the <a href="https://github.com/asood-life/expressio/issues">Issues</a> section. Your feedback is crucial in improving this project for all.
+    Thank you for taking the time to go through this project! If you find it valuable, please consider giving it a ⭐ star. Your support is appreciated and helps others in discovering the project. Should you have enhancement requests or encounter a bug, please report it in the <a href="https://github.com/asood-life/expressio/issues">Issues</a> section. Your feedback is crucial in improving this project.
 </div>
