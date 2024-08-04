@@ -12,15 +12,15 @@
 
 <h3 id="introduction">Introduction</h3>
 <div>
-    Facial expressions are cornerstone of human communication, serving as powerful indicators of emotions, intentions and social cues. From a smile indicating happiness to a furrowed brow signaling concern, facial expressions play a fundamental role in interpersonal interactions. Understanding and interpreting these expressions are crucial not only for effective communication but also for various fields such as artificial intelligence.
+    Facial expressions are cornerstone of human communication, serving as powerful indicators of emotions and social cues. From a smile indicating happiness to a furrowed brow signaling concern, facial expressions play a fundamental role in interpersonal interactions. Understanding and interpreting these expressions are crucial not only for effective communication but also for various fields such as artificial intelligence.
     <br><br>
-    In today's digital age, the ability to recognize and analyze facial expressions has become increasingly important, with applications ranging from sentiment analysis in customer service to emotion detection in numerous sectors. Harnessing the power of facial expression recognition technology opens up a myriad of possibilities for enhancing human-computer interaction, improving user experiences, and developing innovative solutions.
+    In present digital landscape, the ability to recognize and analyze facial expressions has become increasingly important, with applications ranging from sentiment analysis in customer service to emotion detection in numerous sectors. Harnessing the power of facial expression recognition technology opens up a myriad of possibilities for enhancing human-computer interaction, improving user experiences, and developing innovative solutions.
 </div>
 
 <h3 id="overview">Overview</h3>
 
 <div>
-    Expressio is driven by a vision to revolutionize the field of facial expression analysis. It stands as a <b>web-based facial recognition application</b>, crafted to predict four basic human expressions – <b>anger, surprise, sadness and happiness</b>.
+    Expressio is introduced with a vision to revolutionize the field of facial expression analysis. It stands as a <b>web-based application</b> crafted to predict four basic human expressions – <b>anger, surprise, sadness and happiness</b>.
 </div>
 <br>
 
