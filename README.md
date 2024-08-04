@@ -20,7 +20,7 @@
 <h3 id="overview">Overview</h3>
 
 <div>
-    Expressio is introduced with a vision to revolutionize the field of facial expression analysis. It stands as a <b>web-based application</b> built to predict four basic human expressions – <b>anger, surprise, sadness and happiness</b>.
+    <b>Expressio</b> is introduced with a vision to revolutionize the space of facial expression analysis. It stands as a <b>web-based application</b> built to predict four basic human expressions – <b>anger, surprise, sadness and happiness</b>.
 </div>
 <br>
 
